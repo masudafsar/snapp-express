@@ -1,0 +1,43 @@
+.Button {
+  @apply text-[.75rem];
+  @apply rounded;
+  @apply mx-1;
+  @apply hover:bg-gray-100;
+  @apply cursor-pointer;
+  @apply py-1 px-4;
+
+  &.SizeNormal {
+    @apply text-[1rem];
+  }
+
+  &.sizeLarge {
+    @apply text-[1.5rem];
+  }
+
+  &.StyleFill {
+    @apply bg-[color:var(--button-bg-color)];
+    @apply text-[color:var(--button-text-color)];
+    @apply border-0;
+  }
+
+  &.StyleOutline {
+    @apply border-[color:var(--button-bg-color)] border-[1px];
+    @apply text-[color:var(--button-bg-color)];
+    @apply bg-white;
+  }
+
+  &.ColorPrimary {
+    --button-bg-color: theme('colors.primary');
+    --button-text-color: theme('colors.white');
+  }
+
+  &.ColorSuccess {
+    --button-bg-color: theme('colors.emerald.500');
+    --button-text-color: theme('colors.white');
+  }
+
+  &.ColorDanger {
+    --button-bg-color: theme('colors.rose.500');
+    --button-text-color: theme('colors.white');
+  }
+}
