@@ -5,7 +5,6 @@ import Router from "../routes/Router";
 function App() {
   return (
     <div className={styles.App}>
-      اسنپ اکسپرس
       <Router/>
     </div>
   );
