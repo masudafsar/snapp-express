@@ -2,12 +2,19 @@
   @apply p-2;
   @apply bg-white;
   @apply absolute;
-  @apply inset-x-0 top-14;
+  @apply inset-x-0 -top-52;
   @apply z-[9990];
 
-  .Categories {
-    @apply flex;
+  &.Show {
+    @apply top-14;
+  }
 
-    .Item {}
+  .Categories {
+    @apply overflow-x-auto;
+    @apply flex flex-row flex-nowrap justify-start items-center;
+
+    .Item {
+      @apply whitespace-nowrap;
+    }
   }
 }

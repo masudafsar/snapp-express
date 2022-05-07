@@ -9,15 +9,15 @@ import IconButton from "../elements/button/IconButton";
 import styles from './MainHeader.module.scss';
 
 interface Props {
-
+  onTitleClick?: () => void;
 }
 
-const MainHeader: React.FC<Props> = () => {
+const MainHeader: React.FC<Props> = ({onTitleClick}) => {
   return (
     <div className={styles.MainHeader}>
       <div className={styles.Container}>
         <IconButton icon={backIcon} color="light" size="large"/>
-        <h1 className={styles.Title}>
+        <h1 className={styles.Title} onClick={onTitleClick}>
           سوپرمارکت
           <Icon icon={caretIcon} inline={true}/>
         </h1>

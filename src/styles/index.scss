@@ -4,9 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    direction: rtl;
-    @apply bg-gray-200;
-  }
+html {
+  direction: rtl;
+  @apply bg-gray-200;
 }
+
+* {
+  @apply box-border;
+  @apply ease-in-out transition-all;
+}
+
