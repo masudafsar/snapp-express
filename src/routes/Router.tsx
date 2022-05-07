@@ -6,7 +6,8 @@ import ProductListPage from "../pages/ProductListPage";
 const Router: React.FC = () => {
   return (
     <Routes>
-      <Route path='/' element={<ProductListPage/>}/>
+      <Route path='/:vendor/' element={<ProductListPage/>}/>
+      <Route path='/:vendor/:catId/' element={<ProductListPage/>}/>
     </Routes>
   );
 }
