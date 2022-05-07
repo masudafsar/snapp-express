@@ -1,9 +1,9 @@
-.Button {
-  @apply rounded;
+.IconButton {
+  @apply rounded-full;
   @apply mx-1;
   @apply hover:bg-gray-100;
   @apply cursor-pointer;
-  @apply py-1 px-4;
+  @apply p-[.375rem];
 }
 
 @import "Button.Color.module";
