@@ -2,14 +2,11 @@ import React from 'react';
 import cn from 'classnames';
 
 import styles from './Button.module.scss';
+import {IButtonProps} from "./IButtonProps";
+import {getColorClasses, getSizeClass, getVariantClass} from "./button.utils";
 
-interface Props {
+interface Props extends IButtonProps {
   children?: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-  size?: 'normal' | 'large';
-  variant?: 'fill' | 'outline';
-  color?: 'primary' | 'success' | 'danger';
 }
 
 const Button: React.FC<Props> = (
@@ -22,14 +19,18 @@ const Button: React.FC<Props> = (
     onClick,
   }
 ) => {
-  const sizeClass = size === 'normal' ? styles.SizeNormal : size === 'large' ? styles.sizeLarge : '';
-  const styleClass = variant === "fill" ? styles.StyleFill : variant === 'outline' ? styles.StyleOutline : '';
-  const colorClass = color === "primary" ? styles.ColorPrimary : color === 'success' ? styles.ColorSuccess : color === 'danger' ? styles.ColorDanger : '';
   return (
     <button
       type="button"
       onClick={onClick}
-      className={cn(styles.Button, sizeClass, styleClass, colorClass, className)}
+      className={
+        cn(
+          styles.Button,
+          getSizeClass(size),
+          getVariantClass(variant),
+          getColorClasses(color),
+          className)
+      }
     >
       {children}
     </button>

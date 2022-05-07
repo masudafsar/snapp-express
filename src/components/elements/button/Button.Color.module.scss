@@ -1,0 +1,29 @@
+.ColorPrimary {
+  --button-bg-color: theme('colors.primary');
+  --button-text-color: theme('colors.white');
+  --button-outline-color: var(--button-bg-color);
+}
+
+.ColorLight {
+  --button-bg-color: theme('colors.white');
+  --button-text-color: theme('colors.gray.800');
+  --button-outline-color: theme('colors.gray.300');
+}
+
+.ColorDark {
+  --button-bg-color: theme('colors.gray.800');
+  --button-text-color: theme('colors.white');
+  --button-outline-color: var(--button-bg-color);
+}
+
+.ColorSuccess {
+  --button-bg-color: theme('colors.emerald.500');
+  --button-text-color: theme('colors.white');
+  --button-outline-color: var(--button-bg-color);
+}
+
+.ColorDanger {
+  --button-bg-color: theme('colors.rose.500');
+  --button-text-color: theme('colors.white');
+  --button-outline-color: var(--button-bg-color);
+}

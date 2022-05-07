@@ -1,0 +1,11 @@
+.VariantFill {
+  @apply bg-[color:var(--button-bg-color)];
+  @apply text-[color:var(--button-text-color)];
+  @apply border-0;
+}
+
+.VariantOutline {
+  @apply border-[color:var(--button-outline-color)] border-[1px];
+  @apply text-[color:var(--button-outline-color)];
+  @apply bg-white;
+}
