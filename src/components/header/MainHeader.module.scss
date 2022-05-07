@@ -1,7 +1,7 @@
 .MainHeader {
   @apply bg-white;
   @apply shadow-md;
-  @apply absolute;
+  @apply fixed;
   @apply inset-x-0 top-0;
   @apply z-[9999];
 
