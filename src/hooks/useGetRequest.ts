@@ -1,8 +1,11 @@
 import {useEffect, useState} from "react";
 import request from "../utils/request";
 
-export const useGetRequest = (url: string) => {
-  const [data, setData] = useState({});
+export const useGetRequest = <ResponseT, ParamsT = any>(
+  url: string,
+  params?: ParamsT,
+) => {
+  const [data, setData] = useState<ResponseT>();
   const [error, setError] = useState(undefined);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -10,7 +13,9 @@ export const useGetRequest = (url: string) => {
     const fetchData = async () => {
       setIsLoaded(false);
       try {
-        const {data: response} = await request.get(url);
+        const {data: response} = await request.get<ResponseT>(url, {
+          params: params,
+        });
         setData(response);
         setIsLoaded(true);
       } catch (e) {
