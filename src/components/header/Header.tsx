@@ -10,7 +10,7 @@ interface Props {
 
 const Header: React.FC<Props> = () => {
   const [showCategoriesMenu, setShowCategoriesMenu] = useState(false);
-  const onMainHeaderTitleClick = useCallback(() => {
+  const toggleCategoryMenu = useCallback(() => {
     setShowCategoriesMenu(prevState => !prevState);
   }, []);
   const {data} = useContext(MarketContext);
@@ -18,11 +18,12 @@ const Header: React.FC<Props> = () => {
   return (
     <div className={styles.Header}>
       <MainHeader
-        onTitleClick={onMainHeaderTitleClick}
+        onCategoryListClick={toggleCategoryMenu}
       />
       <CategoriesMenu
         categories={data.categories}
         show={showCategoriesMenu}
+        onClose={toggleCategoryMenu}
       />
     </div>
   );
