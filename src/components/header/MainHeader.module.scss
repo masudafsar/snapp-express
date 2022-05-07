@@ -1,0 +1,28 @@
+.MainHeader {
+  @apply bg-white;
+  @apply shadow-md;
+  @apply absolute;
+  @apply inset-x-0 top-0;
+  @apply z-[9999];
+
+  .Container {
+    @apply container mx-auto;
+    @apply flex flex-row items-center;
+    @apply py-2;
+  }
+
+  .Title {
+    @apply text-lg text-center;
+    @apply flex-1;
+
+    svg {
+      display: inline;
+    }
+  }
+
+  .SearchButton {
+  }
+
+  .BackButton {
+  }
+}

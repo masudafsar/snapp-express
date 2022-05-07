@@ -1,0 +1,13 @@
+.CategoriesMenu {
+  @apply p-2;
+  @apply bg-white;
+  @apply absolute;
+  @apply inset-x-0 top-14;
+  @apply z-[9990];
+
+  .Categories {
+    @apply flex;
+
+    .Item {}
+  }
+}
