@@ -6,23 +6,18 @@ import MarketContext from "../contexts/MarketContext";
 import useProductVariation from "../hooks/useProductVariation";
 import {useParams} from "react-router-dom";
 import ProductList from "../components/product/ProductList";
+import {useQuery} from "../hooks/useQuery";
 
 const ProductListPage: React.FC = () => {
-  const {setData} = useContext(MarketContext);
   const {vendor, catId} = useParams();
+  const query = useQuery();
   const {data, isLoaded} = useProductVariation({
     vendorCode: `${vendor}`,
     menu_category_id: catId ? parseInt(catId) : undefined,
     fetch_categories: 1,
     size: 4,
+    page: parseInt(`${query.get('page')}`),
   });
-  useEffect(() => {
-    setData(prevState => {
-      const newState = {...prevState};
-      newState.categories = data?.data?.categories;
-      return newState;
-    });
-  }, [data])
 
   return (
     <div className={styles.ProductListPage}>

@@ -1,17 +1,14 @@
 import {Response} from '../response';
 import {Category} from "../category";
 import {Product} from "../Product";
+import {Pagination} from "../pagination";
 
 export interface ProductVariation {
   product_variations: Product[];
   categories: Category[];
   meta: {
     categoryTitle: string,
-    pagination: {
-      size: number,
-      page: number,
-      total: number,
-    },
+    pagination: Pagination,
     filter: {
       default_title: string,
       results: {

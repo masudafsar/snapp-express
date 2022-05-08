@@ -1,0 +1,10 @@
+.Pagination {
+  @apply flex flex-row flex-nowrap items-stretch;
+
+  .Item {
+    @apply min-w-[3.25rem] min-h-[3.25rem];
+    //@apply border border-[1px] border-gray-100;
+    @apply flex items-center justify-center;
+    @apply text-lg text-center;
+  }
+}
