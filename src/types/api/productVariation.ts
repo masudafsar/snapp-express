@@ -36,6 +36,7 @@ export interface ProductVariationParams {
   page?: number;
   size?: number;
   filters?: any;
+  sort?: string;
   fetch_filters?: 1 | 0;
   fetch_categories?: 1 | 0;
 }

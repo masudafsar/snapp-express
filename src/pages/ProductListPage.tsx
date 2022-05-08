@@ -14,8 +14,10 @@ const ProductListPage: React.FC = () => {
     vendorCode: `${vendor}`,
     menu_category_id: catId ? parseInt(catId) : undefined,
     fetch_categories: 1,
+    fetch_filters: 1,
     size: 4,
     page: parseInt(`${query.get('page')}`),
+    sort: query.get('sort') ? `${query.get('sort')}` : undefined,
   }, [query, vendor, catId]);
 
   return (

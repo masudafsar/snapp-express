@@ -22,7 +22,8 @@ const useProductVariation = (
       const newState = {...prevState};
       newState.categories = response.data?.data.categories;
       newState.pagination = response.data?.data.meta.pagination;
-      newState.categoryTitle=response.data?.data.meta.categoryTitle;
+      newState.categoryTitle = response.data?.data.meta.categoryTitle;
+      newState.sort = response.data?.data.meta.sort;
       return newState;
     });
   }, [response.data])
