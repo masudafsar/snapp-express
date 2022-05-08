@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Link, useParams} from "react-router-dom";
 import {Icon} from "@iconify/react";
 import goToCategoryIcon from "@iconify/icons-ic/twotone-keyboard-arrow-left";
@@ -7,6 +7,7 @@ import closeIcon from "@iconify/icons-ic/twotone-close";
 import styles from './CategoriesMenu.module.scss';
 import {Category} from "../../types/category";
 import IconButton from "../elements/button/IconButton";
+import MarketContext from "../../contexts/MarketContext";
 
 interface Props {
   show?: boolean;
@@ -15,13 +16,18 @@ interface Props {
 }
 
 const CategoriesMenu: React.FC<Props> = ({show, categories, onClose}) => {
+  const {data:marketContextData} = useContext(MarketContext);
   const {vendor} = useParams();
   return (
     <>
       {show && categories && (
         <div className={styles.CategoriesMenu}>
           <div className={styles.Header}>
-            <span>دسته‌بند‌ی‌ها:</span>
+            <span>
+              دسته‌بند‌ی‌ها:
+              {' '}
+              {marketContextData.categoryTitle}
+            </span>
             <IconButton
               icon={closeIcon}
               color='light'

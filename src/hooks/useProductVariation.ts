@@ -20,8 +20,9 @@ const useProductVariation = (
   useEffect(() => {
     setData(prevState => {
       const newState = {...prevState};
-      newState.categories = response.data?.data?.categories;
-      newState.pagination = response.data?.data?.meta.pagination;
+      newState.categories = response.data?.data.categories;
+      newState.pagination = response.data?.data.meta.pagination;
+      newState.categoryTitle=response.data?.data.meta.categoryTitle;
       return newState;
     });
   }, [response.data])

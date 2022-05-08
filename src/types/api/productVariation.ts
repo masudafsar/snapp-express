@@ -2,6 +2,7 @@ import {Response} from '../response';
 import {Category} from "../category";
 import {Product} from "../Product";
 import {Pagination} from "../pagination";
+import {Sort} from "../meta/sort";
 
 export interface ProductVariation {
   product_variations: Product[];
@@ -25,16 +26,7 @@ export interface ProductVariation {
         }[],
       }[],
     },
-    sort: {
-      default_title: string,
-      results: {
-        name: string,
-        order: "asc" | "desc",
-        enabled: boolean,
-        translation: string,
-        icon: string,
-      }[],
-    },
+    sort: Sort,
   },
 };
 
