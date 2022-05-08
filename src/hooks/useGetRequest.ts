@@ -1,9 +1,10 @@
-import {useEffect, useState} from "react";
+import {DependencyList, useEffect, useState} from "react";
 import request from "../utils/request";
 
 export const useGetRequest = <ResponseT, ParamsT = any>(
   url: string,
   params?: ParamsT,
+  deps: DependencyList = [],
 ) => {
   const [data, setData] = useState<ResponseT>();
   const [error, setError] = useState(undefined);
@@ -24,7 +25,7 @@ export const useGetRequest = <ResponseT, ParamsT = any>(
     };
 
     fetchData();
-  }, []);
+  }, deps);
 
   return {data, error, isLoaded};
 }

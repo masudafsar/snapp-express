@@ -17,7 +17,7 @@ const ProductListPage: React.FC = () => {
     fetch_categories: 1,
     size: 4,
     page: parseInt(`${query.get('page')}`),
-  });
+  }, [query]);
 
   return (
     <div className={styles.ProductListPage}>

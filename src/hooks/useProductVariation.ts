@@ -3,14 +3,18 @@ import {
   ProductVariationParams,
   ProductVariationResponse
 } from "../types/api/productVariation";
-import {useContext, useEffect} from "react";
+import {DependencyList, useContext, useEffect} from "react";
 import MarketContext from "../contexts/MarketContext";
 
-const useProductVariation = (params: ProductVariationParams) => {
+const useProductVariation = (
+  params: ProductVariationParams,
+  deps: DependencyList = [],
+) => {
   const {setData} = useContext(MarketContext);
   const response = useGetRequest<ProductVariationResponse, ProductVariationParams>(
     '/product-variation/index',
     params,
+    deps,
   );
 
   useEffect(() => {
