@@ -11,7 +11,7 @@ const Page: React.FC<PageProps> = ({children}) => {
   return (
     <div className={styles.Page}>
       <Header/>
-      {children}
+      <div className={styles.Container}>{children}</div>
     </div>
   );
 }

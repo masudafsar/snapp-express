@@ -5,11 +5,13 @@ import Page from "../components/page/Page";
 import MarketContext from "../contexts/MarketContext";
 import useProductVariation from "../hooks/useProductVariation";
 import {useParams} from "react-router-dom";
+import {digitToPersian} from "../utils/persian-tools";
+import ProductList from "../components/product/ProductList";
 
 const ProductListPage: React.FC = () => {
   const {setData} = useContext(MarketContext);
   const {vendor, catId} = useParams();
-  const {data} = useProductVariation({
+  const {data, isLoaded} = useProductVariation({
     vendorCode: `${vendor}`,
     menu_category_id: catId ? parseInt(catId) : undefined,
     fetch_categories: 1,
@@ -25,7 +27,11 @@ const ProductListPage: React.FC = () => {
   return (
     <div className={styles.ProductListPage}>
       <Page>
-        
+        {isLoaded ? (
+          <ProductList products={data?.data?.product_variations}/>
+        ) : (
+          <div>Loading...</div>
+        )}
       </Page>
     </div>
   );
