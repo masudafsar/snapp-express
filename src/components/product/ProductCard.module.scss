@@ -1,2 +1,23 @@
 .ProductCard {
+  @apply bg-white shadow-md;
+  @apply m-2;
+  @apply rounded overflow-hidden;
+
+  .Image {
+    @apply w-full max-w-[200px] m-auto;
+  }
+  .Details{
+    @apply p-4;
+    @apply text-center;
+  }
+  .Title {
+    @apply text-sm font-light;
+    @apply pb-2;
+  }
+  .Price {
+    @apply pb-2;
+  }
+  .BuyButton {
+    @apply mx-auto;
+  }
 }
