@@ -1,0 +1,30 @@
+.ProductCardLoading {
+  @apply bg-white;
+  @apply animate-pulse;
+  @apply border-[1px];
+
+  .Image {
+    @apply bg-gray-100;
+    @apply w-full h-[140px] m-auto;
+  }
+  .Details{
+    @apply p-4;
+    @apply text-center;
+  }
+  .Title {
+    @apply h-6;
+    @apply bg-gray-100;
+    @apply mb-2;
+  }
+  .Price {
+    @apply h-6;
+    @apply bg-gray-100;
+    @apply mb-2;
+  }
+  .BuyButton {
+    @apply w-3/4 h-8;
+    @apply mx-auto;
+    @apply bg-gray-100;
+
+  }
+}

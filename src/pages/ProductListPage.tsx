@@ -6,6 +6,7 @@ import useProductVariation from "../hooks/useProductVariation";
 import {useParams} from "react-router-dom";
 import ProductList from "../components/product/ProductList";
 import {useQuery} from "../hooks/useQuery";
+import ProductListLoading from "../components/product/loading/ProductList.Loading";
 
 const ProductListPage: React.FC = () => {
   const {vendor, catId} = useParams();
@@ -26,7 +27,7 @@ const ProductListPage: React.FC = () => {
         {isLoaded ? (
           <ProductList products={data?.data?.product_variations}/>
         ) : (
-          <div>Loading...</div>
+          <ProductListLoading/>
         )}
       </Page>
     </div>
