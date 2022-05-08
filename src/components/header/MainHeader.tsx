@@ -1,12 +1,11 @@
 import React from "react";
-import {Icon} from "@iconify/react";
 import categoryIcon from "@iconify/icons-ic/twotone-format-list-bulleted";
-import caretIcon from "@iconify/icons-ic/twotone-keyboard-arrow-down";
 import sortIcon from '@iconify/icons-ic/twotone-sort';
 
 import IconButton from "../elements/button/IconButton";
 
 import styles from './MainHeader.module.scss';
+import {Link} from "react-router-dom";
 
 interface Props {
   onCategoryListButtonClick?: () => void;
@@ -34,8 +33,9 @@ const MainHeader: React.FC<Props> = (
           className={styles.Title}
           onClick={onTitleClick}
         >
-          سوپرمارکت
-          <Icon icon={caretIcon} inline={true}/>
+          <Link to='/'>
+            سوپرمارکت
+          </Link>
         </h1>
         <IconButton
           icon={sortIcon}

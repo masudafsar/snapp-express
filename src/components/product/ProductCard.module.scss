@@ -3,15 +3,19 @@
   @apply border-[1px];
 
   .Image {
-    @apply w-full max-w-[120px] m-auto;
+    @apply w-full max-w-[140px] m-auto;
   }
   .Details{
     @apply p-4;
     @apply text-center;
   }
   .Title {
-    @apply text-sm font-light;
+    @apply max-w-[150px];
     @apply pb-2;
+    @apply text-sm font-light;
+    @apply whitespace-nowrap;
+    @apply overflow-hidden;
+    text-overflow: ellipsis;
   }
   .Price {
     @apply pb-2;

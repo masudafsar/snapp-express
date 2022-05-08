@@ -24,7 +24,7 @@ const ProductCard: React.FC<Props> = ({product, className}) => {
           {digitToPersian(product.title)}
         </div>
         <div className={styles.Price}>
-          {digitToPersian(`${product.price}`)}
+          {product.price.toLocaleString('fa-IR')}
           {' '}
           <span>تومان</span>
         </div>
