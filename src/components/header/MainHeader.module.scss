@@ -2,6 +2,7 @@
   @apply bg-white shadow-md;
   @apply fixed inset-x-0 top-0;
   @apply z-[8999];
+  z-index: 8999;
 
   .Container {
     @apply container mx-auto;

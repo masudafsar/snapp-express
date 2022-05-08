@@ -3,6 +3,8 @@
 
   .Item {
     @apply min-w-[3.25rem] min-h-[3.25rem];
+    min-width: calc(52rem/16);
+    min-height: calc(52rem/16);
     @apply flex items-center justify-center;
     @apply text-lg text-center;
 

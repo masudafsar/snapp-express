@@ -2,10 +2,13 @@
   @apply bg-white;
   @apply animate-pulse;
   @apply border-[1px];
+  border-width: 1px;
 
   .Image {
     @apply bg-gray-100;
-    @apply w-full h-[140px] m-auto;
+    @apply w-full m-auto;
+    @apply h-[140px];
+    height: 140px;
   }
   .Details{
     @apply p-4;

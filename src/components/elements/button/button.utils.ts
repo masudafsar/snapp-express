@@ -11,7 +11,7 @@ import {
 export const getSizeClass = (size: ButtonSizeType) => {
   return {
     normal: sizeStyles.SizeNormal,
-    large: sizeStyles.sizeLarge,
+    large: sizeStyles.SizeLarge,
   }[size];
 }
 

@@ -4,6 +4,7 @@
   @apply hover:bg-gray-100;
   @apply cursor-pointer;
   @apply p-[.375rem];
+  padding: calc(6rem/16);
 }
 
 @import "Button.Color.module";

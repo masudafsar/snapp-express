@@ -1,9 +1,12 @@
 .CategoriesMenu {
   @apply w-[100vw] h-[100vh];
+  width: 100vw;
+  height: 100vh;
   @apply p-2;
   @apply bg-gray-200;
   @apply absolute inset-0;
   @apply z-[9999];
+  z-index: 9999;
 
   .Header {
     @apply bg-white shadow-md;

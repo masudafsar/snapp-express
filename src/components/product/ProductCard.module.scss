@@ -1,25 +1,33 @@
 .ProductCard {
   @apply bg-white;
   @apply border-[1px];
+  border-width: 1px;
 
   .Image {
-    @apply w-full max-w-[140px] m-auto;
+    @apply w-full m-auto;
+    @apply max-w-[140px];
+    max-width: 140px;
   }
-  .Details{
+
+  .Details {
     @apply p-4;
     @apply text-center;
   }
+
   .Title {
     @apply max-w-[150px];
+    max-width: 150px;
     @apply pb-2;
     @apply text-sm font-light;
     @apply whitespace-nowrap;
     @apply overflow-hidden;
     text-overflow: ellipsis;
   }
+
   .Price {
     @apply pb-2;
   }
+
   .BuyButton {
     @apply mx-auto;
   }
