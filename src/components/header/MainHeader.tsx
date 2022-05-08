@@ -2,23 +2,23 @@ import React from "react";
 import {Icon} from "@iconify/react";
 import categoryIcon from "@iconify/icons-ic/twotone-format-list-bulleted";
 import caretIcon from "@iconify/icons-ic/twotone-keyboard-arrow-down";
-import searchIcon from "@iconify/icons-ic/twotone-search";
+import sortIcon from '@iconify/icons-ic/twotone-sort';
 
 import IconButton from "../elements/button/IconButton";
 
 import styles from './MainHeader.module.scss';
 
 interface Props {
-  onCategoryListClick?: () => void;
+  onCategoryListButtonClick?: () => void;
   onTitleClick?: () => void;
-  onSearchClick?: () => void;
+  onSortButtonClick?: () => void;
 }
 
 const MainHeader: React.FC<Props> = (
   {
-    onCategoryListClick,
+    onCategoryListButtonClick,
     onTitleClick,
-    onSearchClick
+    onSortButtonClick
   }
 ) => {
   return (
@@ -28,7 +28,7 @@ const MainHeader: React.FC<Props> = (
           icon={categoryIcon}
           color="light"
           size="large"
-          onClick={onCategoryListClick}
+          onClick={onCategoryListButtonClick}
         />
         <h1
           className={styles.Title}
@@ -38,10 +38,10 @@ const MainHeader: React.FC<Props> = (
           <Icon icon={caretIcon} inline={true}/>
         </h1>
         <IconButton
-          icon={searchIcon}
+          icon={sortIcon}
           color="light"
           size="large"
-          onClick={onSearchClick}
+          onClick={onSortButtonClick}
         />
       </div>
     </div>

@@ -2,8 +2,12 @@ import React, {useContext} from "react";
 import cn from 'classnames';
 import {Icon} from '@iconify/react';
 import {Link, To, useLocation} from 'react-router-dom';
-import prevIcon from "@iconify/icons-ic/twotone-keyboard-arrow-right";
-import nextIcon from "@iconify/icons-ic/twotone-keyboard-arrow-left";
+import prevPageIcon from "@iconify/icons-ic/twotone-keyboard-arrow-right";
+import nextPageIcon from "@iconify/icons-ic/twotone-keyboard-arrow-left";
+import firstPageIcon
+  from '@iconify/icons-ic/twotone-keyboard-double-arrow-right';
+import lastPageIcon from '@iconify/icons-ic/twotone-keyboard-double-arrow-left';
+
 
 import styles from './Pagination.module.scss';
 import MarketContext from "../../contexts/MarketContext";
@@ -35,17 +39,23 @@ const Pagination: React.FC<Props> = () => {
     <>
       {pagination && (
         <div className={styles.Pagination}>
-          <Link to={getUrl(0)} className={styles.Item}>
-            {digitToPersian(`1`)}
-          </Link>
+          {pagination.page !== 0 ? (
+            <Link to={getUrl(0)} className={styles.Item}>
+              <Icon icon={firstPageIcon}/>
+            </Link>
+          ) : (
+            <div className={cn(styles.Item, styles.DisabledItem)}>
+              <Icon icon={firstPageIcon}/>
+            </div>
+          )}
 
           {pagination.page - 1 >= 0 ? (
             <Link to={getUrl(pagination.page - 1)} className={styles.Item}>
-              <Icon icon={prevIcon}/>
+              <Icon icon={prevPageIcon}/>
             </Link>
           ) : (
-            <div className={styles.Item}>
-              <Icon icon={prevIcon}/>
+            <div className={cn(styles.Item, styles.DisabledItem)}>
+              <Icon icon={prevPageIcon}/>
             </div>
           )}
 
@@ -60,19 +70,28 @@ const Pagination: React.FC<Props> = () => {
             {digitToPersian(`${getTotalPage(pagination)}`)}
           </div>
 
-          {pagination.page + 1 <= getTotalPage(pagination) ? (
+          {pagination.page + 1 < getTotalPage(pagination) ? (
             <Link to={getUrl(pagination.page + 1)} className={styles.Item}>
-              <Icon icon={nextIcon}/>
+              <Icon icon={nextPageIcon}/>
             </Link>
           ) : (
-            <div className={styles.Item}>
-              <Icon icon={nextIcon}/>
+            <div className={cn(styles.Item, styles.DisabledItem)}>
+              <Icon icon={nextPageIcon}/>
             </div>
           )}
 
-          <Link to={getUrl(getTotalPage(pagination))} className={styles.Item}>
-            {digitToPersian(`${getTotalPage(pagination)}`)}
-          </Link>
+          {pagination.page + 1 < getTotalPage(pagination) ? (
+            <Link
+              to={getUrl(getTotalPage(pagination) - 1)}
+              className={styles.Item}
+            >
+              <Icon icon={lastPageIcon}/>
+            </Link>
+          ) : (
+            <div className={cn(styles.Item, styles.DisabledItem)}>
+              <Icon icon={lastPageIcon}/>
+            </div>
+          )}
         </div>
       )}
     </>

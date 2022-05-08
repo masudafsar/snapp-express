@@ -24,7 +24,7 @@ const Header: React.FC<Props> = () => {
   return (
     <div className={styles.Header}>
       <MainHeader
-        onCategoryListClick={toggleCategoryMenu}
+        onCategoryListButtonClick={toggleCategoryMenu}
       />
       <CategoriesMenu
         categories={data.categories}
