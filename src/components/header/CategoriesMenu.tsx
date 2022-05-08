@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, useParams} from "react-router-dom";
 import {Icon} from "@iconify/react";
 import goToCategoryIcon from "@iconify/icons-ic/twotone-keyboard-arrow-left";
 import closeIcon from "@iconify/icons-ic/twotone-close";
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const CategoriesMenu: React.FC<Props> = ({show, categories, onClose}) => {
+  const {vendor} = useParams();
   return (
     <>
       {show && categories && (
@@ -29,8 +31,9 @@ const CategoriesMenu: React.FC<Props> = ({show, categories, onClose}) => {
           </div>
           <div className={styles.Categories}>
             {categories.map(category => {
+              const link = `/${vendor}/${category.id}/`;
               return (
-                <div className={styles.Item} key={category.id}>
+                <Link to={link} className={styles.Item} key={category.id}>
                   <img
                     src={category.image}
                     alt={category.title}
@@ -38,7 +41,7 @@ const CategoriesMenu: React.FC<Props> = ({show, categories, onClose}) => {
                   />
                   <div className={styles.Title}>{category.title}</div>
                   <Icon className={styles.Icon} icon={goToCategoryIcon}/>
-                </div>
+                </Link>
               );
             })}
           </div>

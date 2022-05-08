@@ -1,8 +1,7 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 
 import styles from "./ProductListPage.module.scss";
 import Page from "../components/page/Page";
-import MarketContext from "../contexts/MarketContext";
 import useProductVariation from "../hooks/useProductVariation";
 import {useParams} from "react-router-dom";
 import ProductList from "../components/product/ProductList";
@@ -17,7 +16,7 @@ const ProductListPage: React.FC = () => {
     fetch_categories: 1,
     size: 4,
     page: parseInt(`${query.get('page')}`),
-  }, [query]);
+  }, [query, vendor, catId]);
 
   return (
     <div className={styles.ProductListPage}>
