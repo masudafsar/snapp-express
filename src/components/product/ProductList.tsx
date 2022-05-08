@@ -12,7 +12,11 @@ const ProductList: React.FC<Props> = ({products}) => {
   return (
     <div className={styles.ProductList}>
       {products && products.map(product => (
-        <ProductCard key={product.id} product={product}/>
+        <ProductCard
+          key={product.id}
+          product={product}
+          className={styles.Item}
+        />
       ))}
     </div>
   );

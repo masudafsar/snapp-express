@@ -1,2 +1,7 @@
 .ProductList {
+  @apply flex flex-wrap flex-row;
+
+  .Item {
+    @apply basis-1/2;
+  }
 }

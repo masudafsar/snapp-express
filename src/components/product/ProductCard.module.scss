@@ -1,10 +1,9 @@
 .ProductCard {
-  @apply bg-white shadow-md;
-  @apply m-2;
-  @apply rounded overflow-hidden;
+  @apply bg-white;
+  @apply border-[1px];
 
   .Image {
-    @apply w-full max-w-[200px] m-auto;
+    @apply w-full max-w-[100px] m-auto;
   }
   .Details{
     @apply p-4;

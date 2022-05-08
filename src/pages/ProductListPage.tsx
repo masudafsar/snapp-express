@@ -5,7 +5,6 @@ import Page from "../components/page/Page";
 import MarketContext from "../contexts/MarketContext";
 import useProductVariation from "../hooks/useProductVariation";
 import {useParams} from "react-router-dom";
-import {digitToPersian} from "../utils/persian-tools";
 import ProductList from "../components/product/ProductList";
 
 const ProductListPage: React.FC = () => {
@@ -15,6 +14,7 @@ const ProductListPage: React.FC = () => {
     vendorCode: `${vendor}`,
     menu_category_id: catId ? parseInt(catId) : undefined,
     fetch_categories: 1,
+    size: 4,
   });
   useEffect(() => {
     setData(prevState => {

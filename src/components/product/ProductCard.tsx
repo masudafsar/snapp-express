@@ -1,4 +1,5 @@
 import React from "react";
+import cn from 'classnames';
 
 import styles from './ProductCard.module.scss';
 import {Product} from "../../types/Product";
@@ -7,11 +8,12 @@ import Button from "../elements/button/Button";
 
 interface Props {
   product: Product;
+  className?: string;
 }
 
-const ProductCard: React.FC<Props> = ({product}) => {
+const ProductCard: React.FC<Props> = ({product, className}) => {
   return (
-    <div className={styles.ProductCard}>
+    <div className={cn(styles.ProductCard, className)}>
       <img
         src={product.featured}
         alt={digitToPersian(product.title)}
@@ -32,7 +34,7 @@ const ProductCard: React.FC<Props> = ({product}) => {
           color='primary'
           className={styles.BuyButton}
         >
-          اضافه به سبد خرید
+          افزودن
         </Button>
       </div>
     </div>
